@@ -52,6 +52,27 @@ public class RedEyeForm extends javax.swing.JFrame {
         
     }
 
+    public void paintScreen(){
+        
+    }
+    
+    public void removeRed(){
+        
+        for(int r = 0; r < LW; r++){
+            for(int c = 0; c < LW; c++){
+                if(red[r][c] != 0){
+                    System.out.println("Pre: "+red[r][c]);
+                    red[r][c] = 0;
+                    rgb = new Color(red[r][c],green[r][c],blue[r][c]); // reccreates the colour, less the red.
+                    grid[r][c].setBackground(rgb);
+                    System.out.println("Post: "+red[r][c]);
+                    
+                }
+            }   
+        }
+            
+            
+    }
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -89,7 +110,8 @@ public class RedEyeForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void removeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeActionPerformed
-        // TODO add your handling code here:
+        removeRed();
+        System.out.println("WORK");
     }//GEN-LAST:event_removeActionPerformed
 
    
